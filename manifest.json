@@ -1,0 +1,17 @@
+{
+  "name": "MiroMan-0.1",
+  "icons": { "16": "miroman-yel16.png",
+             "48": "miroman-yel48.png",
+            "128": "miroman-yel128.png" },
+  "description": "Bulk flip Miro licesnses to free",
+  "version": "0.6",
+  "permissions": ["contextMenus", "webRequest", "webRequestBlocking","tabs", "https://miro.com/*"],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "browser_action": {
+    "name": "Click and import a CSV list of users to downgrade to free-resticted"
+  }, 
+  "manifest_version": 2
+}
+ 
