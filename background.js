@@ -7,9 +7,10 @@ function importFile() {
       console.log("got the x-csrf-token: " + miroCSRFTok);
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
       var miroCompanyId = tabs[0].url.match(urlRegex)[1];
+      // alert(`company id = ${miroCompanyId}`)
 
       chrome.tabs.executeScript(tabs[0].id, {
-        code: `var miroCSRFTok = ${miroCSRFTok}; var miroCompanyId = ${miroCompanyId};`
+        code: `var miroCSRFTok = '${miroCSRFTok}'; var miroCompanyId = '${miroCompanyId}';`
       }, function() {
         chrome.tabs.executeScript(tabs[0].id, {file: 'content_script.js'});
       });
